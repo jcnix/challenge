@@ -1,6 +1,7 @@
 <html lang="en" ng-app="aquentApp">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Aquent Challenge</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="ui-bootstrap-tpls-0.14.3.min.js"></script>
@@ -24,7 +25,10 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-4 col-md-push-8 col-xs-12">
+					<ng-include src="'detail_panel.html'"></ng-include>
+				</div>
+				<div class="col-md-8 col-md-pull-4 col-xs-12">
 					<uib-pagination
 						ng-model="currentPage"
 						total-items="totalItems"
@@ -38,9 +42,6 @@
 						ng-change="pageChanged()">
 					</uib-pagination>
 					<ng-include src="'member_table.html'"></ng-include>
-				</div>
-				<div class="col-md-4">
-					<ng-include src="'detail_panel.html'"></ng-include>
 				</div>
 			</div>
 		</div>

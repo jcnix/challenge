@@ -31,7 +31,7 @@ aquentApp.controller('AquentCtrl', function($scope, $http) {
 
 	/* When we search we want to revert back to listing all
 	 * items at once. Without this a search will only filter
-	 * based on the current page */
+	 * based on the current page. */
 	$scope.$watch('query', function(term) {
 		$scope.filteredMembers = $scope.members;
 		
