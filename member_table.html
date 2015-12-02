@@ -1,0 +1,20 @@
+<table class="table table-condensed table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Occupation</th>
+			<th>Company</th>
+		</tr>
+	</thead>
+	<tr ng-repeat="member in filteredMembers | filter:query" ng-click="setMember(member)">
+		<td>
+			{{member.firstName}} {{member.middleInitial}}. {{member.surname}}
+		</td>
+		<td>
+			{{member.occupation}}
+		</td>
+		<td>
+			{{member.company}}
+		</td>
+	</tr>
+</table>

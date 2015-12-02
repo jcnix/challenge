@@ -1,0 +1,47 @@
+<html lang="en" ng-app="aquentApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Aquent Challenge</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ui-bootstrap-tpls-0.14.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="controllers.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	</head>
+	<body ng-controller="AquentCtrl">
+		<div class="container">
+			<h1>UX Society Members</h1>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-search"></span>
+						</div>
+						<input ng-model="query" class="form-control" id="search" placeholder="Search">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<uib-pagination
+						ng-model="currentPage"
+						total-items="totalItems"
+						max-size="maxSize"
+						boundary-links="true"
+						class="pagination-sm"
+						previous-text="&lsaquo;"
+						next-text="&rsaquo;"
+						first-text="&laquo;"
+						last-text="&raquo;"
+						ng-change="pageChanged()">
+					</uib-pagination>
+					<ng-include src="'member_table.html'"></ng-include>
+				</div>
+				<div class="col-md-4">
+					<ng-include src="'detail_panel.html'"></ng-include>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
