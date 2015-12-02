@@ -6,7 +6,7 @@ aquentApp.controller('AquentCtrl', function($scope, $http) {
 	$scope.numPerPage = 10;
 	$scope.totalItems = 0;
 	$scope.maxSize = 5;
-	$http.get('http://private-a73e-aquentuxsociety.apiary-mock.com/members').success(function(data) {
+	$http.get('https://private-a73e-aquentuxsociety.apiary-mock.com/members').success(function(data) {
 		$scope.members = data;
 		$scope.totalItems = data.length;
 		$scope.detail = data[0];
